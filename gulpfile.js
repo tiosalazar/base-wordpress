@@ -6,13 +6,14 @@ rename = require('gulp-rename');
 
 gulp.task('serve',['sass'], function(){
     browserSync.init({
-    proxy: "himalayainternetmarketing.com/pruebas/gev",
+   // proxy: "himalayainternetmarketing.com/pruebas/gev",
         //proxy: "localhost/fiestas-tematicas",
         open: false,
        
     });
      gulp.watch("build/scss/*.scss", ['sass']);
      gulp.watch("dist/css/*.css").on('change', browserSync.reload);
+      gulp.watch("/*.php").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function() {
